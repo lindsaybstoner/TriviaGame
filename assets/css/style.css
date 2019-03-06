@@ -1,0 +1,19 @@
+body {
+    background-image: url(../images/philly.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.grayback {
+    background:rgba(185, 185, 185, 0.514);
+}
+
+.space {
+    padding: 0px 10px;
+}
