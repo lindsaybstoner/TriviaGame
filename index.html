@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Trivia Game</title>
 </head>
@@ -11,10 +13,18 @@
     <div class="container">
         <div class="grayback">
             <div class="space">
-                <h1>Philadelphia Trivia</h1>
-                <h3>Time Remaining: <p id="timeLeft"></p><h3>
-                <div id="writeQuestions"></div>
-                <div id="writeAnswers"></div>
+                <h1 class="separate">Philadelphia Trivia</h1>
+                <h3 class="separate">Time Remaining: <p id="timeLeft"></p><h3>
+                <div id="writeQuestion" class="separate"></div>
+                <form>
+                    <div class="separate">
+                        <input type="radio" value="answer" name="answer"><span id="writeAnswer1"></span>
+                        <input type="radio" value="answer" name="answer"><span id="writeAnswer2"></span>
+                        <input type="radio" value="answer" name="answer"><span id="writeAnswer3"></span>
+                        <input type="radio" value="answer" name="answer"><span id="writeAnswer4"></span>
+                    </div>
+                    <input type="submit" value="Submit" class="movedown">
+                </form>
             </div>
         </div>
     </div>

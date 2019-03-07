@@ -3,11 +3,26 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center top;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+h1{
+    font-size: 3rem;
+    padding-bottom: 10px;
+}
+
+h3{
+    font-size: 1.2rem;
+}
+
+p {
+    display: inline-flex;
 }
 
 .container {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .grayback {
@@ -15,5 +30,15 @@ body {
 }
 
 .space {
-    padding: 0px 10px;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.separate{
+    padding-bottom: 10px;
+}
+
+.movedown{
+    display: flex;
+    margin: auto;
 }
