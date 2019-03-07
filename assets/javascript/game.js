@@ -66,26 +66,11 @@ var questionNum = 0;
 
 function printQuestions() {
     $("#writeQuestion").html("<p>" + quizQuestion[questionNum].question + "</p>");
-    $("#writeAnswer1").html("<p>" + quizQuestion[questionNum].answers[0] + "</p>");
-    $("#writeAnswer2").html("<p>" + quizQuestion[questionNum].answers[1] + "</p>");
-    $("#writeAnswer3").html("<p>" + quizQuestion[questionNum].answers[2] + "</p>");
-    $("#writeAnswer4").html("<p>" + quizQuestion[questionNum].answers[3] + "</p>");
-//make them input tags not p tags
+
+    for (var i = 0; i < quizQuestion[questionNum].answers.length; i++){
+        $("#writeAnswer" + i).html("<p>" + quizQuestion[questionNum].answers[i] + "</p>");
+    }
 
 };
 
 printQuestions();
-
-/* for (var i = 0; i < quizQuestion.length; i++) {
-        $("#writeQuestions").html("<p>" + quizQuestion[i].question + "</p>");
-        //make an id for each of the quiz questions within the <p> need to do more canatination
-
-        for (var j = 0; j < quizQuestion[i].answers; j++) {
-             < form >
-                <input type="radio" name="" value="male">
-                    <input type="radio" name="gender" value="female">
-                        <input type="radio" name="gender" value="other">
-                            <input type="submit" value="Submit">
-                            </form> 
-        }
-    }  */
