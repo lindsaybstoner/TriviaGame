@@ -3,7 +3,8 @@ var quizQuestion = [
     {
         question: "What does Schuylkill mean?",
         answers: ["Old black water", "Turtle crossing place", "Place not to drink from", "Hidden river"],
-        correctAnswer: "Hidden river"
+        correctAnswer: "Hidden river",
+        imgFile: "../images/Schuylkill.jpg"
     },
     {
         question: "What motto is engraved on the liberty bell?",
@@ -44,19 +45,23 @@ var quizQuestion = [
 
 //timer info
 var timer;
-var clock = 180;
+var clock = 31;
 
 function countDown() {
     clock--;
     $("#timeLeft").html(clock);
 
     if (clock === 0) {
-        $("#timeLeft").append("Times up!")
+        clearInterval(timer);
+        $("#writeQuestion").html("Out of time!");
+        $("#allAnswers").html("The correct answer was: " + quizQuestion[questionNum].correctAnswer);
     };
+
 };
 
 function runClock() {
     timer = setInterval(countDown, 1000);
+
 };
 
 runClock();
@@ -65,12 +70,46 @@ runClock();
 var questionNum = 0;
 
 function printQuestions() {
+    
     $("#writeQuestion").html("<p>" + quizQuestion[questionNum].question + "</p>");
 
     for (var i = 0; i < quizQuestion[questionNum].answers.length; i++){
         $("#writeAnswer" + i).html("<p>" + quizQuestion[questionNum].answers[i] + "</p>");
+        $(`input[test=${'test'+i}]`).attr("answer", quizQuestion[questionNum].answers[i]);
     }
 
 };
 
+function pickedAnswer() {
+
+    $("#target").submit(function(event) {
+
+        if ($('input[name="answer"]:checked').attr("answer") === quizQuestion[questionNum].correctAnswer) {
+            $("#writeQuestion").html("Correct!");
+            $("#allAnswers").html("<img src=" + quizQuestion[questionNum].imgFile + ">");
+            clearInterval(timer);
+            setInterval(nextQuestion, 3000);
+
+        }
+        else {
+            $("#writeQuestion").html("Nope!");
+            $("#allAnswers").html("The correct answer was: " + quizQuestion[questionNum].correctAnswer);
+            clearInterval(timer);
+            setInterval(nextQuestion, 3000)
+        }
+
+        event.preventDefault();
+
+    });
+};
+
+function nextQuestion(){
+    questionNum++;
+    printQuestions();
+
+};
+
+
+
 printQuestions();
+pickedAnswer();
