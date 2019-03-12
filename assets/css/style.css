@@ -27,7 +27,7 @@ p {
 }
 
 .grayback {
-    background:rgba(185, 185, 185, 0.514);
+    background:rgba(185, 185, 185, 0.534);
 }
 
 .space {
@@ -42,4 +42,9 @@ p {
 .movedown{
     display: flex;
     margin: auto;
+    margin-top: 20px;
+}
+
+.image {
+    width: 300px;
 }
