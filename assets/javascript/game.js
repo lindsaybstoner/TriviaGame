@@ -69,6 +69,7 @@ function countDown() {
 
 };
 
+//get clock going
 function runClock() {
     timer = setInterval(countDown, 1000);
 
@@ -79,6 +80,7 @@ runClock();
 //question info
 var questionNum = 0;
 
+//writing out the questions, answers, submit button
 function printQuestions() {
 
     $("#writeQuestion").html("<p>" + quizQuestion[questionNum].question + "</p>");
@@ -106,10 +108,12 @@ function printQuestions() {
     $("#allAnswers").append('<input type="submit" value="Submit" class="movedown"></input>')
 };
 
+//create other global variables 
 var wins = 0;
 var losses = 0;
 var unanswer = 0;
 
+//determining the answer and what was checked to change what was displayed
 function pickedAnswer() {
 
     $("#target").submit(function (event) {
@@ -136,10 +140,13 @@ function pickedAnswer() {
     });
 };
 
+//moving to the next question until the end of the array of questions
 function nextQuestion() {
 
+//increase question num to move on to the next question in the array
 questionNum++;
 
+    //reset clock for each question
     if (questionNum <= quizQuestion.length - 1) {
         clock = 31;
         runClock();
@@ -147,6 +154,7 @@ questionNum++;
         printQuestions();
     }
     
+    //if you have reached the end show stats
     else {
 
         clearInterval(timer);
@@ -166,6 +174,7 @@ questionNum++;
 
 };
 
+//reset the game when clicked hte restart input value
 function reset() {
     
     $("#writeQuestion").html('');
