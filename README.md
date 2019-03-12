@@ -1,10 +1,3 @@
 # TriviaGame
 
-create a variable that holds the question number you are on
-make a function that prints a question and the answers
-
-on click show the right answer
-increment the question number variable 
-
-then move question
-
+All questions were found on https://www.phillymag.com/big-philly-quiz/

@@ -50,6 +50,7 @@ var quizQuestion = [
     },
 ];
 
+
 //timer info
 var timer;
 var clock = 31;
